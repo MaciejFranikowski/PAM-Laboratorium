@@ -35,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "onResume", duration).show()
     }
 
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "onPause", duration).show()
+    }
+
     override fun onStop() {
         super.onStop()
         Toast.makeText(this, "onStop", duration).show()
@@ -45,8 +50,13 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "onDestroy", duration).show()
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
         Toast.makeText(this, "onSaveInstanceState", duration).show()
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Toast.makeText(this, "onRestoreInstanceState", duration).show()
     }
 }
