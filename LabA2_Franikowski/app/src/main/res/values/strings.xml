@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LabA2_Franikowski</string>
+    <string name="convert_string">Calculate receipt</string>
+    <string name="euro_hint">Tip percentage</string>
+    <string name="no_value_string" />
+    <string name="othertext_string">Receipt value</string>
+    <string name="plusButton_string">+</string>
+    <string name="subtractButton_string">-</string>
+    <string name="multiplyButton_string">*</string>
+    <string name="divideButton_string">/</string>
+    <string name="result_string"></string>
+    <string name="service_rating_string">Service rating</string>
+    <string name="final_receipt_info_string">Final receipt value:</string>
+    <string name="food_rating_info_string">Food rating</string>
+</resources>
