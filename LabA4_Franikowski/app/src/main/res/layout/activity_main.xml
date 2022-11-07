@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/showContactsButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="19dp"
+        android:onClick="showContacts"
+        android:text="Show Contacts"
+        app:layout_constraintBottom_toTopOf="@+id/smsNumberEditText"
+        app:layout_constraintEnd_toEndOf="@+id/smsNumberEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/smsBodyEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="16dp"
+        android:hint="sms Body"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/writeSmsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smsNumberEditText" />
+
+    <Button
+        android:id="@+id/writeSmsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="17dp"
+        android:onClick="writeSms"
+        android:text="Write Sms"
+        app:layout_constraintBottom_toTopOf="@+id/longitudeEditText"
+        app:layout_constraintStart_toStartOf="@+id/smsBodyEditText"
+        app:layout_constraintTop_toBottomOf="@+id/smsBodyEditText" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="35dp"
+        android:onClick="showMap"
+        android:text="Show map"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/latitudeEditText" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="132dp"
+        android:onClick="showExtraActivity"
+        android:text="Show extra activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <EditText
+        android:id="@+id/smsNumberEditText"
+        android:layout_width="251dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginBottom="437dp"
+        android:ems="10"
+        android:hint="sms Number"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/extraResultTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/longitudeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="longitude"
+        android:inputType="numberSigned|number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/latitudeEditText"
+        app:layout_constraintEnd_toEndOf="@+id/latitudeEditText"
+        app:layout_constraintTop_toBottomOf="@+id/writeSmsButton" />
+
+    <EditText
+        android:id="@+id/latitudeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:hint="latitude"
+        android:inputType="numberSigned|number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/longitudeEditText" />
+
+    <TextView
+        android:id="@+id/extraResultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="89dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/smsNumberEditText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
