@@ -10,7 +10,6 @@
         android:id="@+id/showContactsButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="37dp"
         android:layout_marginTop="47dp"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="8dp"
@@ -18,7 +17,7 @@
         android:text="Show Contacts"
         app:layout_constraintBottom_toTopOf="@+id/contactNameTextView"
         app:layout_constraintEnd_toEndOf="@+id/bluetoothButton"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/contactNameTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -85,37 +84,34 @@
         android:id="@+id/extraResultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
         android:layout_marginBottom="150dp"
-        android:text="TextView"
+        android:text="Imię nazwisko, ocena"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <TextView
         android:id="@+id/contactNameTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="3dp"
         android:layout_marginEnd="21dp"
         android:layout_marginBottom="20dp"
         android:text="Contact's number will be here"
         app:layout_constraintBottom_toTopOf="@+id/bluetoothButton"
         app:layout_constraintEnd_toEndOf="@+id/bluetoothButton"
-        app:layout_constraintStart_toStartOf="@+id/showContactsButton"
+        app:layout_constraintStart_toStartOf="@+id/longitudeEditText"
         app:layout_constraintTop_toBottomOf="@+id/showContactsButton" />
 
     <EditText
         android:id="@+id/indexEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
         android:layout_marginBottom="15dp"
         android:ems="10"
         android:hint="index num"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
