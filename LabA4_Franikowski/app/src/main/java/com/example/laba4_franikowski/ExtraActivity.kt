@@ -13,17 +13,17 @@ class ExtraActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_extra)
         val textView: TextView = findViewById(R.id.textView)
-
-        val textView2: TextView = findViewById(R.id.textView2)
         val myCallerIntent = intent
         val myBundle = myCallerIntent.extras
-        val longitude = myBundle?.getString("longitude")
-        val latitude = myBundle?.getString("latitude")
-        if(latitude != null && longitude != null){
-            textView.text = latitude
-            textView2.text = longitude
+        val index = myBundle?.getString("index")
+        if(index != null){
+            textView.text = index
         }
-        myBundle?.putString("Result", latitude + latitude)
+        if(index == "249436"){
+            myBundle?.putString("Result", "Maciej Franikowski, 5.0")
+        } else {
+            myBundle?.putString("Result", "Student nie rozpoznany")
+        }
         if (myBundle != null) {
             myCallerIntent.putExtras(myBundle)
         }
