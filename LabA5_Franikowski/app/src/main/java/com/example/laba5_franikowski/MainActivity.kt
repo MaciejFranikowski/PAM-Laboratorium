@@ -3,6 +3,8 @@ package com.example.laba5_franikowski
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.telephony.PhoneStateListener
@@ -15,54 +17,52 @@ import androidx.core.content.ContextCompat
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var powerConnectionReceiver : PowerConnectionReceiver
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var textView1: TextView = findViewById(R.id.textView1)
+        checkPermissions()
+    }
 
-        val permission = ContextCompat.checkSelfPermission(
+    private fun checkPermissions(){
+        val permission1 = ContextCompat.checkSelfPermission(
             this,
-            Manifest.permission.READ_PHONE_STATE
+            Manifest.permission.RECEIVE_SMS
         )
-
-        if (permission != PackageManager.PERMISSION_GRANTED) {
+        if (permission1 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                 this,
-                arrayOf(Manifest.permission.READ_PHONE_STATE),
+                arrayOf(Manifest.permission.RECEIVE_SMS),
                 1
             )
         }
-
-        var telephonyManager = getSystemService(TELEPHONY_SERVICE) as TelephonyManager
-
-        textView1.text = "CallState: ".plus(telephonyManager.callState)
-            .plus(", PhoneType: ").plus(telephonyManager.phoneType)
-            .plus(", NetworkType: ").plus(telephonyManager.networkType)
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        var textView2: TextView = findViewById(R.id.textView2)
-        val telMgr = this.getSystemService(
-            Context.TELEPHONY_SERVICE
-        ) as TelephonyManager
-        val phoneStateListener: PhoneStateListener = object : PhoneStateListener() {
-            @SuppressLint("MissingPermission")
-            override fun onCallStateChanged(
-                state: Int, incomingNumber: String
-            ) {
-                textView2.text = telMgr.dataNetworkType.toString()
-            }
-        }
-        telMgr.listen(
-            phoneStateListener,
-            PhoneStateListener.LISTEN_CALL_STATE
+        val permission2 = ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.SEND_SMS
         )
-//        val telephonyOverview: String = this.getTelephonyOverview(telMgr)
-//        this.telMgrOutput.setText(telephonyOverview)
+        if (permission2 != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.SEND_SMS),
+                1
+            )
+        }
     }
 
+    override fun onResume() {
+        super.onResume()
+        powerConnectionReceiver = PowerConnectionReceiver()
+        val intentFilter = IntentFilter()
+        intentFilter.addAction(Intent.ACTION_POWER_CONNECTED)
+        intentFilter.addAction(Intent.ACTION_POWER_DISCONNECTED)
+        intentFilter.addAction(Intent.ACTION_BATTERY_LOW)
+        intentFilter.addAction(Intent.ACTION_BATTERY_OKAY)
+        this.registerReceiver(powerConnectionReceiver, intentFilter)
+    }
+    override fun onPause() {
+        super.onPause()
+        this.unregisterReceiver(powerConnectionReceiver)
+    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,

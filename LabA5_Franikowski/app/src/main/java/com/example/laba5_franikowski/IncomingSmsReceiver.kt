@@ -16,27 +16,33 @@ class IncomingSmsReceiver:BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         if (intent!!.action.equals(SMS_REC_ACTION)) {
             val sb = StringBuilder()
-            val smsAddress = ""
+            var smsAddress = ""
             val bundle = intent!!.extras
             if (bundle != null) {
                 val pdus = bundle["pdus"] as Array<Any>?
                 for (pdu in pdus!!) {
                     val smsMessage: SmsMessage = SmsMessage.createFromPdu(pdu as ByteArray)
-                    val smsAddress = smsMessage.displayOriginatingAddress
-                    sb.append("body - " + smsMessage.displayMessageBody)
+                    smsAddress = smsMessage.displayOriginatingAddress
+                    sb.append(smsMessage.displayMessageBody)
                 }
             }
-            if(smsAddress == "+48721821410" || smsAddress=="+48669290979" || smsAddress=="666606362"){
-                sendSms(context, smsAddress)
+            val stringValue = sb.toString().trim()
+
+            if(stringValue.startsWith("PILNE")){
+                Toast.makeText(
+                    context, stringValue, Toast.LENGTH_LONG
+                ).show()
+            } else {
+                try {
+                    if (stringValue.toInt() < 10)
+                        sendSms(context, smsAddress, stringValue.toInt().plus(1).toString())
+                } catch (_: java.lang.Exception) {
+                }
             }
-            Toast.makeText(
-                context, "SMS RECEIVED - "
-                        + sb.toString(), Toast.LENGTH_LONG
-            ).show()
         }
     }
-    private fun sendSms(context:Context?, address:String) {
+    private fun sendSms(context:Context?, address:String, body:String) {
         this.smsManager = SmsManager.getDefault()
-        smsManager.sendTextMessage(address, null, "Response", null, null)
+        smsManager.sendTextMessage(address, null, body, null, null)
     }
 }
