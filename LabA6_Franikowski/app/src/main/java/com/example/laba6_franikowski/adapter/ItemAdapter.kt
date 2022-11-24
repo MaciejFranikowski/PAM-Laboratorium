@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laba6_franikowski.R
-import com.example.laba6_franikowski.model.Photo
+import com.example.laba6_franikowski.model.Faculty
 
-class ItemAdapter(private val context: Context, private val dataset: List<Photo>) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+class ItemAdapter(private val context: Context, private val dataset: List<Faculty>) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -39,4 +39,5 @@ class ItemAdapter(private val context: Context, private val dataset: List<Photo>
     override fun getItemCount(): Int {
         return dataset.size
     }
+
 }

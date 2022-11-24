@@ -2,39 +2,60 @@ package com.example.laba6_franikowski.database
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import com.example.laba6_franikowski.model.Photo
+import com.example.laba6_franikowski.model.Faculty
 
 class DataManager(context: Context) {
-    private val db : SQLiteDatabase = context.openOrCreateDatabase("Photos", Context.MODE_PRIVATE, null)
+    private val db : SQLiteDatabase = context.openOrCreateDatabase("Faculties", Context.MODE_PRIVATE, null)
     init {
-        val photosCreateQuery = "CREATE TABLE IF NOT EXISTS `Photos` ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Title` TEXT NOT NULL)"
-        db.execSQL(photosCreateQuery)
+        val facultiesCreateQuery = "CREATE TABLE IF NOT EXISTS `Faculties` ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Title` TEXT NOT NULL)"
+        db.execSQL(facultiesCreateQuery)
     }
 
-    fun add(photo: Photo){
-        val query = """INSERT INTO Photos (Title) Values ('${photo.title}')"""
+    fun add(faculty: Faculty){
+        val query = """INSERT INTO Faculties (Title) Values ('${faculty.title}')"""
         db.execSQL(query)
     }
 
-    fun getAllPhotos():List<Photo>{
-        val query: String = "SELECT * FROM Photos";
-        return photos(query, null)
+    fun getAllFaculties():List<Faculty>{
+        val query: String = "SELECT * FROM Faculties";
+        return faculties(query, null)
     }
 
-    private fun photos(query:String, args: Array<String>?):List<Photo>{
-        val photos = mutableListOf<Photo>()
+    fun delete(faculty: Faculty){
+        if(faculty.id != null){
+            val query = """DELETE FROM Faculties WHERE `Id` == ('${faculty.id}')"""
+            db.execSQL(query)
+        }
+    }
+
+    fun edit(faculty: Faculty){
+        if(faculty.id != null){
+            val query = """UPDATE Faculties SET `Title` = '${faculty.title}' WHERE `Id` == ('${faculty.id}')"""
+            db.execSQL(query)
+        } else {
+            val query = """INSERT INTO Faculties (Title) Values ('${faculty.title}')"""
+            db.execSQL(query)
+        }
+    }
+
+    fun findFaculty(title: String): List<Faculty> {
+        val query = """SELECT * FROM Faculties WHERE `Title` ==  '${title}'"""
+        return faculties(query, null)
+    }
+
+    private fun faculties(query:String, args: Array<String>?):List<Faculty>{
+        val faculties = mutableListOf<Faculty>()
 
         val cursor = db.rawQuery(query, args)
         if(cursor.moveToFirst()){
             do{
                 val id = cursor.getInt(cursor.getColumnIndexOrThrow("Id"))
                 val title = cursor.getString(cursor.getColumnIndexOrThrow("Title"))
-                val photo = Photo(id, title)
-                photos.add(photo)
+                val faculty = Faculty(id, title)
+                faculties.add(faculty)
             }while(cursor.moveToNext())
         }
         cursor.close()
-        return photos
-
+        return faculties
     }
 }
