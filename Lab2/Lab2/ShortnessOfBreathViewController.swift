@@ -13,8 +13,6 @@ class ShortnessOfBreathViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(probability)
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Navigation
