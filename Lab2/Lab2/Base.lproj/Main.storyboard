@@ -102,13 +102,13 @@
                             <constraint firstItem="pk6-un-6ZG" firstAttribute="leading" secondItem="BlF-nS-XU1" secondAttribute="leading" constant="112" id="cOu-p3-3vy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1Im-1J-Vt0"/>
+                    <navigationItem key="navigationItem" title="Cough" id="1Im-1J-Vt0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZn-MJ-LE2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1773.2824427480916" y="3.5211267605633805"/>
         </scene>
-        <!--Fever View Controller-->
+        <!--Fever-->
         <scene sceneID="BHk-qe-pdg">
             <objects>
                 <viewController id="Yyt-5p-fSl" customClass="FeverViewController" customModule="Lab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,7 +158,7 @@
                             <constraint firstItem="AcQ-XQ-u7I" firstAttribute="leading" secondItem="3Dt-vN-Smc" secondAttribute="leading" constant="112" id="oUu-4B-8YA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TJg-uR-RDt"/>
+                    <navigationItem key="navigationItem" title="Fever" id="TJg-uR-RDt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3m-zR-l3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
-        <!--Shortness Of Breath View Controller-->
+        <!--Shortness of Breath-->
         <scene sceneID="rat-mS-rk6">
             <objects>
                 <viewController id="Rh5-ro-hMb" customClass="ShortnessOfBreathViewController" customModule="Lab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,13 +232,13 @@
                             <constraint firstItem="J3r-ag-sSq" firstAttribute="centerX" secondItem="aAt-uJ-xoQ" secondAttribute="centerX" id="yjk-jK-aSF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Fdp-qS-yH0"/>
+                    <navigationItem key="navigationItem" title="Shortness of Breath" id="Fdp-qS-yH0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJi-DH-FYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3218" y="4"/>
         </scene>
-        <!--Result View Controller-->
+        <!--Test result-->
         <scene sceneID="xQl-WF-w8e">
             <objects>
                 <viewController id="SR4-ri-HRa" customClass="ResultViewController" customModule="Lab2" customModuleProvider="target" sceneMemberID="viewController">
@@ -271,7 +271,7 @@
                         <viewLayoutGuide key="safeArea" id="QQO-S9-uXR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lQm-HH-Oc7"/>
+                    <navigationItem key="navigationItem" title="Test result" id="lQm-HH-Oc7"/>
                     <connections>
                         <outlet property="probabilityResultLabel" destination="qBJ-dh-vh6" id="Whq-vc-HaG"/>
                     </connections>
