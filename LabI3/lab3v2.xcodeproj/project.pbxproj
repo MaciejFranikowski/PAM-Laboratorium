@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520FAF5D2980233B00F33421 /* OrderResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520FAF5C2980233B00F33421 /* OrderResultViewController.swift */; };
 		52D938B1297F0A5700250E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D938B0297F0A5700250E58 /* AppDelegate.swift */; };
 		52D938B3297F0A5700250E58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D938B2297F0A5700250E58 /* SceneDelegate.swift */; };
 		52D938B5297F0A5700250E58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D938B4297F0A5700250E58 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520FAF5C2980233B00F33421 /* OrderResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResultViewController.swift; sourceTree = "<group>"; };
 		52D938AD297F0A5700250E58 /* lab3v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab3v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D938B0297F0A5700250E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D938B2297F0A5700250E58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				52D938B0297F0A5700250E58 /* AppDelegate.swift */,
 				52D938B2297F0A5700250E58 /* SceneDelegate.swift */,
 				52D938B4297F0A5700250E58 /* ViewController.swift */,
+				520FAF5C2980233B00F33421 /* OrderResultViewController.swift */,
 				52D938B6297F0A5700250E58 /* Main.storyboard */,
 				52D938B9297F0A5800250E58 /* Assets.xcassets */,
 				52D938BB297F0A5800250E58 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520FAF5D2980233B00F33421 /* OrderResultViewController.swift in Sources */,
 				52D938B5297F0A5700250E58 /* ViewController.swift in Sources */,
 				52D938B1297F0A5700250E58 /* AppDelegate.swift in Sources */,
 				52D938B3297F0A5700250E58 /* SceneDelegate.swift in Sources */,

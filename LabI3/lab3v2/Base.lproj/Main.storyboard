@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="landscape" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lab3v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="760" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bEA-zt-bVX">
-                                <rect key="frame" x="50" y="107.66666666666669" width="712" height="41"/>
+                                <rect key="frame" x="50" y="100.5" width="275" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cuk-qq-KSm">
                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
@@ -31,16 +31,7 @@
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" text="Pick a drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLG-Tb-51N">
-                                <rect key="frame" x="362" y="77" width="88" height="20.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="754" text="Table number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-LN-746">
-                                <rect key="frame" x="351.66666666666669" y="232.66666666666666" width="109" height="20.333333333333343"/>
+                                <rect key="frame" x="143.5" y="60" width="88" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +40,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="753" text="How many drinks?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-DX-F5C">
-                                <rect key="frame" x="336.66666666666669" y="157.66666666666666" width="139" height="20"/>
+                                <rect key="frame" x="118" y="185.5" width="139" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,7 +49,7 @@
                                 </variation>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xfg-2i-XJV" userLabel="Table Text Field">
-                                <rect key="frame" x="50" y="263" width="712" height="35"/>
+                                <rect key="frame" x="50" y="413" width="275" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uGC-Uo-zr5">
                                         <variation key="heightClass=compact-widthClass=compact" constant="35"/>
@@ -72,7 +63,7 @@
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMW-cS-wNj">
-                                <rect key="frame" x="343" y="313" width="126" height="45"/>
+                                <rect key="frame" x="124.5" y="483" width="126" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="BVI-qB-awx">
                                         <variation key="heightClass=regular-widthClass=regular" constant="65"/>
@@ -83,9 +74,12 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Finalize order"/>
+                                <connections>
+                                    <segue destination="ChV-es-ddS" kind="show" identifier="finalizeOrder" id="wkv-Qh-qCb"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XEe-Ol-Zt5" userLabel="Drinks Text Field">
-                                <rect key="frame" x="50" y="187.66666666666666" width="712" height="35"/>
+                                <rect key="frame" x="50" y="247" width="275" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cK7-Lf-NuA">
                                         <variation key="heightClass=compact-widthClass=compact" constant="35"/>
@@ -98,6 +92,15 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 </variation>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="754" misplaced="YES" text="Table number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpu-LN-746">
+                                <rect key="frame" x="119" y="389" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -155,10 +158,55 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="drinkTypeSegmentedControl" destination="bEA-zt-bVX" id="yoZ-Hm-onW"/>
+                        <outlet property="numberOfDrinksTextField" destination="XEe-Ol-Zt5" id="dJ8-iX-alt"/>
+                        <outlet property="tableNumberTextField" destination="xfg-2i-XJV" id="Ept-no-V7C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-78"/>
+            <point key="canvasLocation" x="77.599999999999994" y="-35.467980295566505"/>
+        </scene>
+        <!--Order Result View Controller-->
+        <scene sceneID="AQL-vf-37f">
+            <objects>
+                <viewController id="ChV-es-ddS" customClass="OrderResultViewController" customModule="lab3v2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cn3-LP-OI2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your order:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSB-YZ-oQW">
+                                <rect key="frame" x="145" y="163" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp7-vo-Kgs" userLabel="Order Result Label">
+                                <rect key="frame" x="20" y="240" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gfg-3d-XWw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qp7-vo-Kgs" firstAttribute="top" secondItem="gSB-YZ-oQW" secondAttribute="bottom" constant="56" id="5Tb-Y1-efZ"/>
+                            <constraint firstItem="qp7-vo-Kgs" firstAttribute="leading" secondItem="gfg-3d-XWw" secondAttribute="leading" constant="20" id="KTh-qC-Tbs"/>
+                            <constraint firstItem="gSB-YZ-oQW" firstAttribute="top" secondItem="gfg-3d-XWw" secondAttribute="top" constant="163" id="Ny1-eA-BI9"/>
+                            <constraint firstItem="gfg-3d-XWw" firstAttribute="trailing" secondItem="qp7-vo-Kgs" secondAttribute="trailing" constant="20" id="bHD-1z-p3H"/>
+                            <constraint firstItem="gSB-YZ-oQW" firstAttribute="centerX" secondItem="cn3-LP-OI2" secondAttribute="centerX" id="y7a-Ob-NBM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nfs-ye-IJY"/>
+                    <connections>
+                        <outlet property="orderResultLabel" destination="qp7-vo-Kgs" id="too-Ow-g94"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJm-F1-ATF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="-36"/>
         </scene>
     </scenes>
     <resources>
